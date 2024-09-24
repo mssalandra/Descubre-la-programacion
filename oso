@@ -1,0 +1,43 @@
+void main(){
+  rect (40,40,240,240);
+ // orejas 
+ ellipse (100,100,70,70);
+ ellipse (220,100,70,70);
+ // cabeza
+ ellipse (160,160,150,150);
+ // ojos
+ ellipse (140,140,40,50); 
+ ellipse (150,140,5,5);
+ ellipse (180,140,40,50);
+ ellipse (170,140,5,5);
+ // nariz
+ ellipse (160,170,15,10);
+ //boca
+ ellipse (160,200,20,15);
+}
+
+
+
+void main (){
+  animate (ejecutar);
+}
+void  ejecutar (){
+    
+    control ();
+    image ();
+   
+    viod image (){
+     rect(120,120,80,80);
+      
+      void control(){
+       background (255,255,255);
+        println ("X: " + mouseX);
+           println ("Y: " + mouseY);
+     if (mousePressed) {
+    if (mouseButton == RIGHTBUTTON) {
+    	ellipse(mouseX, mouseY, 50,50);
+      if (mouseX > 120 && mouseX < 200 || mouseX > 120 && mouseX < 200)
+      }
+    
+  }
+}
