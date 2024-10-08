@@ -18,26 +18,4 @@ void main(){
 
 
 
-void main (){
-  animate (ejecutar);
-}
-void  ejecutar (){
-    
-    control ();
-    image ();
-   
-    viod image (){
-     rect(120,120,80,80);
-      
-      void control(){
-       background (255,255,255);
-        println ("X: " + mouseX);
-           println ("Y: " + mouseY);
-     if (mousePressed) {
-    if (mouseButton == RIGHTBUTTON) {
-    	ellipse(mouseX, mouseY, 50,50);
-      if (mouseX > 120 && mouseX < 200 || mouseX > 120 && mouseX < 200)
-      }
-    
-  }
-}
+
