@@ -1,11 +1,17 @@
+int t1 = second();
+
 void main (){
-  animate (cronometro);
+  animate (ejecutar);
+  
 }
-vois cronometro (){
-  println (millis());
- 
-  if (millis ()>5000){
-    background (143,150,239);
+void ejecutar (){
+    int a = t1 - second();
+    println(a);
+    
+    if (a<=-5){
+      t1 = second();
+      a = t1 - second();
+      background(random(256),random(256),random(256));
+      
+    }
   }
-  while ((millis ()>5000))
-}
