@@ -1,9 +1,9 @@
 void main (){
   animate (ejecutar);
+  animate (dibuja);
 }
 void  ejecutar (){
-    
-    control ();
+  control ();
     imagen ();
    
 }
@@ -12,16 +12,28 @@ void  ejecutar (){
      rect(120,120,80,80);
       fill(255,0,0);
       text ("PLAY", 137, 170);
-    }   
-      void control(){
-       background (255,255,255);
-        println ("X: " + mouseX);
-           println ("Y: " + mouseY);
-     if (mousePressed) {
-      if (mouseButton == LEFTBUTTON) {
+    }  
+
+void control (){
+     if (mousePressed) 
+      if (mouseButton == LEFTBUTTON) 
        if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200){
-         background(56,137,255);
+         background(0,62,153);
+        animate (otra);
+     }}
         
-       }}
-  }
+void dibuja(){
+     background(37,233,99);
+  if (mousePressed)
+      if (mouseButton == RIGHTBUTTON){
+      animate(otra);
+    }
 }
+void otra(){
+    background(255,0,0);
+    if (mousePressed)
+      if (mouseButton == RIGHTBUTTON){
+      animate(dibuja);
+    }
+}
+
