@@ -11,61 +11,61 @@ void  menu (){
 }
     void imagenBTN1 (){
       fill(255,186,242);
-      rect(120,120,80,80);
+      rect(120,80,80,80);
       fill(255,0,0);
       textSize(15);
-      text ("PLAY", 137, 170);
+      text ("PLAY", 137, 130);
     }  
 
 void controlBTN1 (){
   background(131,187,243);
      if (mousePressed){
       if (mouseButton == LEFTBUTTON) 
-       if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200){
-        background(230,237,66);
+       if (mouseX > 120 && mouseX < 200 && mouseY > 80 && mouseY < 160){
+        //background(255,186,245);
         animate (PLAY);
       }}}
 
     void imagenBTN2 (){
-      fill(255,186,242);
-      rect(35,30,35,30);
+      fill(255,169,239);
+      rect(120,170,80,20);
       fill(255,0,0);
-      textSize(15);
-      text ("PLAY", 137, 170);
+      textSize(6);
+      text ("INSTRUCCIONES", 126, 184);
     }  
 
 void controlBTN2 (){
  // background(131,187,243);
      if (mousePressed){
       if (mouseButton == LEFTBUTTON) 
-       if (mouseX > 35 && mouseX < 70 && mouseY > 30 && mouseY < 60){
-        background(230,237,66);
-        animate (PLAY);
+       if (mouseX > 120 && mouseX < 200 && mouseY > 170 && mouseY < 190){
+       // background(255,126,236);
+        animate (instrucciones);
       }}}
 
  void imagenBTN3 (){
-      fill(255,186,242);
-      rect(120,20,150,30);
+      fill(255,169,239);
+      rect(120,200,80,20);
       fill(255,0,0);
-      textSize(15);
-      text ("PLAY", 137, 170);
+      textSize(6);
+      text ("CRÉDITOS", 135, 214);
     }  
 
 void controlBTN3 (){
   //background(131,187,243);
      if (mousePressed){
       if (mouseButton == LEFTBUTTON) 
-       if (mouseX > 35 && mouseX < 70 && mouseY > 30 && mouseY < 60){
-        background(230,237,66);
-        animate (PLAY);
+       if (mouseX > 120 && mouseX < 200 && mouseY > 200 && mouseY < 220){
+       // background(255,62,227);
+        animate (creditos);
       }}}
 
 void imagenExit(){
-     fill(161,255,0);
+     fill(255,0,0);
      rect(10,10,10,10);
      fill(255,0,0);
      textSize(10);
-     text ("EXIT", 21, 20);
+     text ("EXIT", 23, 20);
 }
 
 void controlExit (){
@@ -78,7 +78,33 @@ void controlExit (){
    }}}
         
 void PLAY(){
-     background(241,239,55);
+     background(207,255,186);
+  imagenExit();
+  controlExit();
+   if (mousePressed)
+    if (mouseButton == LEFTBUTTON){
+   }
+    }
+
+void instrucciones(){
+     background(253,222,147);
+  textSize(10);
+     text ("EXIT", 23, 20);
+  imagenExit();
+  controlExit();
+   if (mousePressed)
+    if (mouseButton == LEFTBUTTON){
+   }
+    }
+
+void creditos(){
+     background(219,254,255);
+  fill(0,8,255);
+  textSize(10);
+     text ("DE: MERCEDES SERNA PERIAGO, ", 50, 150);
+  fill(0,8,255);
+  textSize(10);
+     text ("1º de Bacillerato C. ", 50, 170);
   imagenExit();
   controlExit();
    if (mousePressed)
