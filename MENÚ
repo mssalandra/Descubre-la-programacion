@@ -28,51 +28,51 @@ void controlBTN1 (){
 
     void imagenBTN2 (){
       fill(255,169,239);
-      rect(120,170,80,20);
+      rect(70,190,80,20);
       fill(255,0,0);
       textSize(6);
-      text ("INSTRUCCIONES", 126, 184);
+      text ("INSTRUCCIONES", 76, 204);
     }  
 
 void controlBTN2 (){
  // background(131,187,243);
      if (mousePressed){
       if (mouseButton == LEFTBUTTON) 
-       if (mouseX > 120 && mouseX < 200 && mouseY > 170 && mouseY < 190){
+       if (mouseX > 70 && mouseX < 150 && mouseY > 190 && mouseY < 210){
        // background(255,126,236);
         animate (instrucciones);
       }}}
 
  void imagenBTN3 (){
       fill(255,169,239);
-      rect(120,200,80,20);
+      rect(180,190,80,20);
       fill(255,0,0);
       textSize(6);
-      text ("CRÉDITOS", 135, 214);
+      text ("CRÉDITOS", 200, 204);
     }  
 
 void controlBTN3 (){
   //background(131,187,243);
      if (mousePressed){
       if (mouseButton == LEFTBUTTON) 
-       if (mouseX > 120 && mouseX < 200 && mouseY > 200 && mouseY < 220){
+       if (mouseX > 180 && mouseX < 260 && mouseY > 190 && mouseY < 210){
        // background(255,62,227);
         animate (creditos);
       }}}
 
 void imagenExit(){
      fill(255,0,0);
-     rect(10,10,10,10);
+     rect(15,15,15,15);
      fill(255,0,0);
      textSize(10);
-     text ("EXIT", 23, 20);
+     text ("EXIT", 35, 28);
 }
 
 void controlExit (){
   //background (255,255,255);
  if (mousePressed)
   if (mouseButton == LEFTBUTTON){
-   if (mouseX > 10 && mouseX < 20 && mouseY > 10 && mouseY < 20){
+   if (mouseX > 15 && mouseX < 30 && mouseY > 15 && mouseY < 30){
          background(135,194,243);
      animate (menu);
    }}}
@@ -88,8 +88,32 @@ void PLAY(){
 
 void instrucciones(){
      background(253,222,147);
-  textSize(10);
-     text ("EXIT", 23, 20);
+  fill(22,145,0);
+   textSize(10);
+     text ("INSTRUCCIONES:", 100,70);
+  fill(0,21,255);
+   textSize(6);
+     text ("OBJETIVO:", 23, 90);
+  fill(0,0,0);
+   textSize(6);
+     text ("Conseguir adivinar el orden de los 10 números que se muestren en la pantalla.", 23, 100);
+  fill(0,21,255);
+  textSize(6);
+     text ("DESARROLLO DEL JUEGO:", 23, 120);
+  fill(0,0,0);
+   textSize(6);
+     text ("1.  En la pantalla aparecerá  una secuencia de 5 números seguidos de 1-100", 23, 130);
+   textSize(6);
+     text ("2. Debes de reenscribirla en los cuadros que aparezcan en pantalla en menos", 23, 140);
+   textSize(6);
+     text ("de 5 segundos.", 23, 150);
+   textSize(6);
+     text ("3.  PERO ESTATE ATENTO, solo tendrás 3 segundos para memorizar", 23, 160);
+   textSize(6);
+     text ("la secuencia.", 23, 170);
+  fill(255,0,243);
+   textSize (6);
+     text ("¡MUCHA SUERTE!", 125, 190);
   imagenExit();
   controlExit();
    if (mousePressed)
@@ -101,7 +125,7 @@ void creditos(){
      background(219,254,255);
   fill(0,8,255);
   textSize(10);
-     text ("DE: MERCEDES SERNA PERIAGO, ", 50, 150);
+     text ("de: MERCEDES SERNA PERIAGO, ", 50, 150);
   fill(0,8,255);
   textSize(10);
      text ("1º de Bacillerato C. ", 50, 170);
