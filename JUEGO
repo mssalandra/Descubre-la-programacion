@@ -1,0 +1,12 @@
+void main (){
+    int altura = 10;
+      int ancho = 10;
+    
+ for (int n=1; n<= 11; n=n +1){
+   line (10, altura, 310, altura);
+   altura = altura +30;
+ } 
+     for (int n=1; n<=11; n=n +1){
+ line (ancho, 10, ancho, 310);
+       ancho = ancho +30;
+     }}
