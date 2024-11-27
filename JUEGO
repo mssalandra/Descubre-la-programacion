@@ -2,6 +2,7 @@ int x= 10;
 int y= 250;
 int x2= 250;
 int y2= 10;
+int t1 = millis()/1000;
 int altura = 10;
       int ancho = 10;
 
@@ -9,12 +10,27 @@ void main (){
   //background(255,255,255);
   
    animate(ejecutar,200);
+ 
 }
+void temporizador(){
+  println("t1: " + t1);
+  println ("segundos: " +second());
+    int a = 1+t1 - millis()/1000;
+    println(a);
+  if (a==0){
+   animate(win);
+    }
+  }
+void win (){
+     background(255,193,0);
+}
+
 void ejecutar (){
- background(255,255,255); 
+ background(255,255,255);
   fondo();
   player ();
   player2 ();
+  animate (temporizador);
   if (x==x2 && y ==y2){
   animate (gameover);
   }}
@@ -122,4 +138,3 @@ void controles2 (){
     y2=250;
   }
 }
-
