@@ -5,24 +5,173 @@ int y2= 10;
 int t1 = millis()/1000;
 int altura = 10;
       int ancho = 10;
-
 void main (){
-  //background(255,255,255);
-  
-   animate(ejecutar,200);
- 
+  animate (menu);
 }
+void  menu (){
+  controlBTN1 ();
+    imagenBTN1();
+    controlBTN2 ();
+     imagenBTN2();
+  controlBTN3 ();
+     imagenBTN3();
+}
+    void imagenBTN1 (){
+      fill(255,186,242);
+      rect(120,80,80,80);
+      fill(255,0,0);
+      textSize(15);
+      text ("PLAY", 137, 130);
+    }  
+
+void controlBTN1 (){
+  background(131,187,243);
+     if (mousePressed){
+      if (mouseButton == LEFTBUTTON) 
+       if (mouseX > 120 && mouseX < 200 && mouseY > 80 && mouseY < 160){
+        //background(255,186,245);
+        animate (PLAY);
+      }}}
+
+    void imagenBTN2 (){
+      fill(255,169,239);
+      rect(70,190,80,20);
+      fill(255,0,0);
+      textSize(6);
+      text ("INSTRUCCIONES", 76, 204);
+    }  
+
+void controlBTN2 (){
+ // background(131,187,243);
+     if (mousePressed){
+      if (mouseButton == LEFTBUTTON) 
+       if (mouseX > 70 && mouseX < 150 && mouseY > 190 && mouseY < 210){
+       // background(255,126,236);
+        animate (instrucciones);
+      }}}
+
+ void imagenBTN3 (){
+      fill(255,169,239);
+      rect(180,190,80,20);
+      fill(255,0,0);
+      textSize(6);
+      text ("CRÉDITOS", 200, 204);
+    }  
+
+void controlBTN3 (){
+  //background(131,187,243);
+     if (mousePressed){
+      if (mouseButton == LEFTBUTTON) 
+       if (mouseX > 180 && mouseX < 260 && mouseY > 190 && mouseY < 210){
+       // background(255,62,227);
+        animate (creditos);
+      }}}
+
+void imagenExit(){
+     fill(255,0,0);
+     rect(15,15,15,15);
+     fill(255,0,0);
+     textSize(10);
+     text ("EXIT", 35, 28);
+}
+
+void controlExit (){
+  //background (255,255,255);
+ if (mousePressed)
+  if (mouseButton == LEFTBUTTON){
+   if (mouseX > 15 && mouseX < 30 && mouseY > 15 && mouseY < 30){
+         background(135,194,243);
+     animate (menu);
+   }}}
+        
+void PLAY(){
+   animate(juego);
+  }
+  
+void instrucciones(){
+     background(253,222,147);
+  fill(22,145,0);
+   textSize(10);
+     text ("INSTRUCCIONES:", 100,70);
+  fill(0,21,255);
+   textSize(6);
+     text ("OBJETIVO:", 23, 90);
+  fill(0,0,0);
+   textSize(6);
+     text ("Ganar al otro jugador.", 23, 100);
+  fill(0,21,255);
+  textSize(6);
+     text ("DESARROLLO DEL JUEGO:", 23, 120);
+  fill(0,0,0);
+   textSize(6);
+     text ("1.  Habrá un temporizador de 60 segundos que no podremos ver.", 23, 130);
+   textSize(6);
+     text ("2. Con ldeas teclas ´´arriba, abajo, derecha, izquierda`` moveremos al jugador", 23, 140);
+   textSize(6);
+     text ("rojo por el tablero y con las teclas ´´w, s, a, d`` moveremos al jugador azul.", 23, 150);
+   textSize(6);
+     text ("3.  Si el jugador rojo consigue pillar al azul, GANA, en cambio, si el azul", 23, 160);
+   textSize(6);
+     text ("consigue pasar los 60 segundos sin ser atrapado, GANA.", 23, 170);
+  fill(255,0,243);
+   textSize (6);
+     text ("¡MUCHA SUERTE!", 125, 190);
+  imagenExit();
+  controlExit();
+   if (mousePressed)
+    if (mouseButton == LEFTBUTTON){
+   }
+    }
+
+void creditos(){
+     background(219,254,255);
+  fill(0,8,255);
+  textSize(10);
+     text ("de: MERCEDES SERNA PERIAGO, ", 50, 150);
+  fill(0,8,255);
+  textSize(10);
+     text ("1º de Bacillerato C. ", 50, 170);
+  imagenExit();
+  controlExit();
+   if (mousePressed)
+    if (mouseButton == LEFTBUTTON){
+   }
+    }
+void juego(){
+animate(ejecutar,200);
+
+}
+
 void temporizador(){
   println("t1: " + t1);
   println ("segundos: " +second());
-    int a = 1+t1 - millis()/1000;
+    int a = 60+t1 - millis()/1000;
     println(a);
   if (a==0){
    animate(win);
     }
   }
 void win (){
-     background(255,193,0);
+     background(255,239,186);
+  fill(15,0,255);
+  textSize(20);
+  text ("THE GAME IS OVER", 30, 60);
+  fill(255,0,0);
+  rect(40,95,100,100);
+  fill(0,153,255);
+  rect(180,95,100,100);
+  fill(0,0,0);
+  textSize(10);
+  text ("PLAYER 1", 60, 215);
+  fill(0,0,0);
+  textSize(10);
+  text ("PLAYER 2", 200, 215);
+  fill(27,255,0);
+  textSize(15);
+  text ("WINNER", 53, 240);
+  fill(255,0,0);
+  textSize(15);
+  text ("LOSER", 198, 240);
 }
 
 void ejecutar (){
@@ -35,13 +184,28 @@ void ejecutar (){
   animate (gameover);
   }}
 void gameover (){
-background(88,255,140);
+ background(255,239,186);
+  fill(15,0,255);
+  textSize(20);
+  text ("THE GAME IS OVER", 30, 60);
   fill(255,0,0);
-  textSize(30);
-  text ("GAME OVER", 40, 170);
-}
+  rect(40,95,100,100);
+  fill(0,153,255);
+  rect(180,95,100,100);
+  fill(0,0,0);
+  textSize(10);
+  text ("PLAYER 1", 60, 215);
+  fill(0,0,0);
+  textSize(10);
+  text ("PLAYER 2", 200, 215);
+  fill(27,255,0);
+  textSize(15);
+  text ("LOSER", 53, 240);
+  fill(255,0,0);
+  textSize(15);
+  text ("WINNER", 198, 240);
    //background(255,255,255);
-
+}
 
 
   void fondo (){
@@ -138,3 +302,8 @@ void controles2 (){
     y2=250;
   }
 }
+  
+  
+  
+  
+  
